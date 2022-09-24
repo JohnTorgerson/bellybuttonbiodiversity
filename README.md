@@ -1,25 +1,14 @@
 # bellybuttonbiodiversity
-app that analyzes biodiversity of belly buttons
-# Project Name Template
-
-### Project Description
+### dashboard app that analyzes biodiversity of belly buttons
 
 ##### Authors:
 * John Torgerson (JohnTorgerson)
 ---
 
-##### Instructions:
-Create file `config.py` to pass your user name, password, and port number into variables
-This code will not run unless you first configure the following three variables:
-* user = "postgres"
-* password = "<YOUR PostgreSQL Password HERE>"
-* port = "<Your PostgreSQL Port Number HERE>"
----
-
 ##### Tools & Supplies:
 * < Database and table description here >
 
-* Python, SQLAlchemy, Pandas, Matplotlib, SQLAlchemy ORM queriies were all used for this project < edit or append here as needed>
+* < edit or append here as needed >
 ---
 
 ### Guide to Repo Contents:
@@ -27,21 +16,19 @@ This code will not run unless you first configure the following three variables:
 * `sample.file` is < describe contents >
 * `sample.image` is < describe image >
 * In folder, `Resources` are the following 6 tables:
-    1. `sample.sqlite` is < describe contents >
-    2. `sample_data.csv` is < describe contents >
-    3. `more_samples.csv` is < describe contents >
+    1. `plots.js` is a script file containing code for ployly 
+    2. `bonus.js` is < describe contents >
+    3. `idontknowyet.js` is < describe contents >
     
 ---
 
 ### Observations:
 * < List Observations Here >
-* The relationship is inverse.
-* Engineer, Asst Engineer, Senior Engineer have similar AVG Salaries, with Senior Engineers making the least of the group. Meanwhile Senior Staff as well as general Staff, both AVG nearly 12,000 more. Also, from our previous examples, there are an awful lot of women named Hercules B____, which seems improbable.
-* Either something is wrong, or this company data is fictional.
+* 
 
 ---
 
 ### Credits and Special Thanks
 
-* Tom Lenzmeier for sharing a name concatenation technique
-* Thanks to Sanoo Singh for inspiring me to practice subquery method
+* nameless helped with
+
