@@ -1,12 +1,25 @@
 // Id this script
 console.log("Dropdown Toggle switcher")
 
-// Getch JSON Data and console log it
-const biodiversity = "data/samples.json"
+let dropdownSubjects = [940,941]
 
-d3.json(biodiversity).then(function(data) {
-    console.log(data);
-});
+
+// // Using map create the array
+// let mapSubjects = dropdownSubjects.map((item, index) => `${index}: ${item}`);
+
+// console.log("Map:", mapSubjects)
+
+
+
+
+
+
+// // Getch JSON Data and console log it
+// const biodiversity = "data/samples.json"
+
+// d3.json(biodiversity).then(function(data) {
+//     console.log(data);
+// });
 
 
 
