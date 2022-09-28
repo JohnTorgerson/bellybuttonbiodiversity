@@ -6,98 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Bellybutton Biodiversity</title>
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
 
   <div class="container">
-    <!-- This is a new row -->
     <div class="row">
-
-      <!-- This is a full width element -->
       <div class="col-md-12 jumbotron text-center">
         <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset<br>( Dropdown toggles between test subjects )</p>
+        <p>Use the interactive charts below to explore the dataset</p>
       </div>
-
     </div>
-
-    <!-- This is a new row -->
     <div class="row">
-      
-      <!-- This is a new element -->
       <div class="col-md-2">
         <div class="well">
           <h5>Test Subject ID No.:</h5>
-          <select id="dropdownSubjects" onchange="optionChanged(this.value)"></select>
-          
-          <script src="Resources/dropToggle.js"></script>
+          <select id="dropdown" onchange="selectId(this.value)"></select>
         </div>
-
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Demographic Information</h3>
+            <h3 class="panel-title">Demographic Info</h3>
           </div>
           <div id="sample-metadata" class="panel-body"></div>
-          <!-- <script src="data/samples.json"></script>
-          <script src="Resources/panel.js"></script> -->
         </div>
-
       </div>
-      
-      <!-- This is a new element -->
       <div class="col-md-5">
-        <h3>Barplot Location Test Header</h3>
+        <!-- <h3>Bar Test Location</h3> -->
         <div id="bar"></div>
-        <!-- <script src="data/samples.json"></script> -->
-        <script src="Resources/barPlot.js"></script>
       </div>
-      
-      <!-- This is a new element -->
       <div class="col-md-5">
-        <h3>Gaugeplot Location Test Header</h3>
-        <!-- <div id="gauge"></div>
-        <script src="data/samples.json"></script>
-        <script src="Resources/gaugePlot.js"></script> -->
+        <h3>Gauge Test Location</h3>
+        <div id="gauge"></div>
       </div>
-
     </div>
-
-    <!-- This is a new row -->
     <div class="row">
-      
-      This is a full width element
-      <hr>
       <div class="col-md-12">
-        <h1>This is the Massive Bubble Graph Test Header</h1>
-        <!-- <div id="bubble"></div>
-        <script src="data/samples.json"></script>
-        <script src="Resources/bubblePlot.js"></script> -->
+        <!-- <h1>Huge Bubble Plot Test Header Location</h1> -->
+        <div id="bubble"></div>
       </div>
-
     </div>
-
   </div>
 
-  <!-- <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-   -->
-  
-
-  <!-- This is a full width element -->
-  <div class="col-md-12">
-    <hr>
-    <p>Data Sources:<br />
-      <ul>
-        <li>
-          <a href="http//robdunnlab.com/projects/belly-button-biodiversity/">The Public Science Lab | Department of Applied Ecology | North Carolina State University</a>
-        </li>
-      </ul>
-    </p>
-  </div>
+  <script src="./static/js/app.js"></script>
+  <!-- <script src="./static/js/bonus.js"></script> -->
   
 </body>
 
