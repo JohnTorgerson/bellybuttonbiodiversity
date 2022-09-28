@@ -29,7 +29,46 @@ function drawGauge(subjectId) {
 // Bubble Graph Stub
 function drawBubble(subjectId) {
     console.log(`Draw Bubble Graph(${subjectId})`);
+   
+    d3.json(url).then(data => {
+        // console.log(data);
+
+        let samplesets = data.samples;
+        let sampleArray = samplesets.filter(s => s.id == subjectId);
+        let subjectSamples = sampleArray[0];
+
+        let otu_ids = subjectSamples.otu_ids;
+        let otu_labels = subjectSamples.otu_labels;
+        let sample_values = subjectSamples.sample_values;
+
+        // let yticks = otu_ids.slice(0, 10).map(otuId => `OTU ${otuId}`).reverse();
+        // Create a Bubble trace object
+        let buData = {
+            x: otu_ids,
+            y: sample_values,
+            text: otu_labels,
+            mode: "markers",
+            marker: {
+                size: sample_values,
+                color: otu_ids,
+                colorscale: "Earth"
+            }
+        };
         
+        // Put the trace int an array
+        let buArray = [buData];
+
+        // Create a laytout object
+        let buLayout = {
+            title: "Bacteria Culture Map Per Subject",
+            margin: {t: 50, l: 50},
+            hovermode: "closest",
+            xaxis: {title: "OTU ID"}
+        };
+
+        // Call Plotly Tool
+        Plotly.newPlot("bubble", buArray, buLayout);
+    });
 };
 
 //=====================END STUBS=========================
