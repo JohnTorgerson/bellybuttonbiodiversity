@@ -1,32 +1,106 @@
 // Current Work identification
 console.log("This is the plot scripts file.");
 
-// This section of code was inspired by Dom's in class tutorial
+// This section of code contains contents inspired by Dom's in class tutorial
 
 // Define a constant variable for the data url
-
 const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json";
+
 //========================STUBS============================
 
-// Demographic Table Stub
+// Populate the Demographic Table
 function demoTable(subjectId) {
-    console.log(`Populate Demographics Table(${subjectId})`);
+    // console.log(`Populate Demographics Table(${subjectId})`);
 
+    // d3.json(url).then(data => {
+    //     let metaDataSet = data.metadata;
+    //     let metaArray = metaDataSet.filter(m => m.id == subjectId);
+    //     let metaSubject = metaArray[0];
+    //     console.log(metaSubject);
+
+    //     let body = console.log(`id: ${metaSubject.id}`);
+    //     // `ethnicity: ${metaSubject.ethnicity}` );
+    //     Plotly.text("sample-metadata", body)
+    // })
 }
 
-// Bar Graph Stub
+// Build a Bar Chart
 function drawBar(subjectId) {
     console.log(`Draw Bar Graph(${subjectId})`);
 
+    d3.json(url).then(data => {
+        // console.log(data);
+
+        let samplesets = data.samples;
+        let sampleArray = samplesets.filter(s => s.id == subjectId);
+        let subjectSamples = sampleArray[0];
+
+        let otu_ids = subjectSamples.otu_ids;
+        let otu_labels = subjectSamples.otu_labels;
+        let sampleValues = subjectSamples.sample_values;
+        let topTen_sValues = sampleValues.slice(0, 10).reverse();
+        let yticks = otu_ids.slice(0, 10).map(otuId => `OTU ${otuId}`).reverse();
+        let labels = otu_labels.slice(0, 10).reverse();
+
+        // Create a Bar trace object
+        let baData = {
+            type: 'bar',
+            orientation: 'h',
+            x: topTen_sValues,
+            y: yticks,
+            text: labels
+        };
+
+        // Put the trace object into an array
+        let baArray = [baData];
+
+        // Create the layout object
+        let baLayout = {
+            title: "Top Ten Bacteria Cultures Found",
+            margin: {t: 95, l: 75}
+        };
+
+        // Call Plotly Tool
+        Plotly.newPlot("bar", baArray, baLayout);
+    });
 };
 
-// Gauge Dial Stub
-function drawGauge(subjectId) {
+// Build a Guage
+function drawGauge(subjectId) 
+{
     console.log(`Draw Gauge Dial(${subjectId})`);
 
-};
+    d3.json(url).then(data => {
+        // console.log(data);
 
-// Bubble Graph Stub
+        let metaDataSet = data.metadata;
+        let metaArray = metaDataSet.filter(m => m.id == subjectId);
+        let metaSubject = metaArray[0];
+        let value = metaSubject.wfreq;
+
+        // Create a gauge trace object
+        let gaData = {
+            value: value,
+            title: { text: "Scrubs per Week" },
+            type: "indicator",
+            mode: "gauge+number",
+            gauge: { axis: { range: [null, 10] } }
+        };
+        
+        let gaArray = [gaData];
+
+        let gaLayout = { 
+            height: 400,
+            width: 600,
+            margin: {b:0, r: -120}
+        };
+
+        // Call Plotly Tool
+        Plotly.newPlot("gauge", gaArray, gaLayout);
+    });
+}
+
+// Build a Bubble Chart
 function drawBubble(subjectId) {
     console.log(`Draw Bubble Graph(${subjectId})`);
    
@@ -60,8 +134,10 @@ function drawBubble(subjectId) {
 
         // Create a laytout object
         let buLayout = {
+            height: 600,
+            width: 1300,
             title: "Bacteria Culture Map Per Subject",
-            margin: {t: 50, l: 50},
+            margin: {t: 50, l: 0},
             hovermode: "closest",
             xaxis: {title: "OTU ID"}
         };
@@ -73,7 +149,7 @@ function drawBubble(subjectId) {
 
 //=====================END STUBS=========================
 
-// Designate function(s) for the Event Handler - ID Selector Change
+// Update a *NEW* Load Function Upon a Dropdown Selection Change
 function selectId(subjectId) 
 {
     console.log(`selectId changed to new Id: ${subjectId}`);
@@ -83,20 +159,19 @@ function selectId(subjectId)
     drawBubble(subjectId);
 }
 
+// Construct an Initial Load Function
 function initDashboard() 
 {
-    console.log('InitDashboard()');
+    // console.log('InitDashboard()');
     // Get a handle to the dropdown
     let selector = d3.select("#dropdown");
-
-    // let url = "https://getthisfromgitlabhomeworkisntructions.com";
 
     d3.json(url).then(data => {
         // Put subject id number list into an array
         console.log("Here is the data:", data);
 
         let subjects = data.names;
-        console.log("Here are the subject ids:", subjects);
+        // console.log("Here are the subject ids:", subjects);
 
         // Forloop Populates the Dropdown List
         for (let i = 0; i < subjects.length; i++) {
@@ -118,21 +193,3 @@ function initDashboard()
 };
 
 initDashboard();
-
-// Construct an Initial Load Function
-
-
-// Change a Load Function Upon a Dropdown Change
-
-
-// Populate the Demographic Table
-
-
-// Build a Bar Chart
-
-
-// Build a Guage
-
-
-// Build a Bubble Chart
-
