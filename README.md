@@ -6,34 +6,29 @@
 ---
 
 ##### Tools & Supplies:
-* 
-
-* < edit or append here as needed >
+* Visual Studio 
+* html, css, javascript
+* d3 library, Plotly
 ---
 
 ### Guide to Repo Contents:
 
 * `index.html` is the landing page html code
-* `sample.image` is < describe image >
+* `app.js` is the javascript that provides the functionality
+* `ReadME.md` is the file you are currently viewing
+
 * In folder, `data` is the following dataset:
-    1. `samples.json` is a complete dataset of test subjects, and their test sample results
-    
-* In folder, `Resources` are the following script files:
-    1. `barPlot.js` is a script file containing code for plotly horizontal bar plot 
-    2. `bubblePlot.js` is a script file containing code for plotly bubble plot
-    3. `gaugePlot.js` is a script file containing code for plotly guage plot
-    4. `dropToggle.js` is a script file containing code for the user dropdown selector
-    5. `panel.js` is a script file containing code for the output of the selection summary stats
-    
+    1. `samples.json` is a complete raw API dataset of test subjects, and their test sample results
 ---
 
 ### Observations:
-* < List Observations Here >
-* 
+* I made the most effective use of print(console) statements to date on this. You can never use them too often.
+* I really enjoyed building a dashboard, and find satisfaction in controlling interactive changes based on events.
 
 ---
 
 ### Credits and Special Thanks
-
+* Special thanks to our professor Dominic LaBella for an outstanding tutorial on building interactive dashboards
+* Some of his code was used in this
 * Data Source: The Public Science Lab | Department of Applied Ecology | North Carolina State University
 

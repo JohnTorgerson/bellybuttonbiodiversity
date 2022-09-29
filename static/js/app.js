@@ -10,19 +10,32 @@ const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/
 
 // Populate the Demographic Table
 function demoTable(subjectId) {
-    // console.log(`Populate Demographics Table(${subjectId})`);
+    console.log(`Populate Demographic Subtable: (${subjectId})`);
+   
+    // let table = d3.select("#sample-metadata");
 
     // d3.json(url).then(data => {
+    //     console.log(data);
+
     //     let metaDataSet = data.metadata;
     //     let metaArray = metaDataSet.filter(m => m.id == subjectId);
     //     let metaSubject = metaArray[0];
     //     console.log(metaSubject);
+    
+    //     table.append.text(`id: ${metaSubject.id}`);
+    
+    // d3.json(url).then(data => {
+    //     // console.log(data);
 
-    //     let body = console.log(`id: ${metaSubject.id}`);
-    //     // `ethnicity: ${metaSubject.ethnicity}` );
-    //     Plotly.text("sample-metadata", body)
-    // })
-}
+    //     let metaDataSet = data.metadata;
+    //     let metaArray = metaDataSet.filter(m => m.id == subjectId);
+    //     let metaSubject = metaArray[0];
+    //     console.log(metaSubject);
+    // });
+    // let body = d3.select("sample-metadata").append();
+    // body.text(`id: ${metaSubject.ethnicity}`);
+
+};
 
 // Build a Bar Chart
 function drawBar(subjectId) {
