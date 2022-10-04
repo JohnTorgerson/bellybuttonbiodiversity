@@ -12,29 +12,29 @@ const url = "https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/
 function demoTable(subjectId) {
     console.log(`Populate Demographic Subtable: (${subjectId})`);
    
-    // let table = d3.select("#sample-metadata");
+    d3.json(url).then(data => {
+        // console.log(data);
 
-    // d3.json(url).then(data => {
-    //     console.log(data);
-
-    //     let metaDataSet = data.metadata;
-    //     let metaArray = metaDataSet.filter(m => m.id == subjectId);
-    //     let metaSubject = metaArray[0];
-    //     console.log(metaSubject);
+        let metaDataSet = data.metadata;
+        let metaArray = metaDataSet.filter(m => m.id == subjectId);
+        let metaSubject = metaArray[0];
+        console.log(metaSubject);
+        let body1 = d3.select("#meta1");
+        body1.text(`id: ${metaSubject.id}`);
+        let body2 = d3.select("#meta2"); 
+        body2.text(`ethnicity: ${metaSubject.ethnicity}`);
+        let body3 = d3.select("#meta3");
+        body3.text(`gender: ${metaSubject.gender}`);
+        let body4 = d3.select("#meta4");
+        body4.text(`age: ${metaSubject.age}`);
+        let body5 = d3.select("#meta5");
+        body5.text(`loc: ${metaSubject.location}`);
+        let body6 = d3.select("#meta6");
+        body6.text(`bb type: ${metaSubject.bbtype}`);
+        let body7 = d3.select("#meta7");
+        body7.text(`wash frequency: ${metaSubject.wfreq}`);
+    });
     
-    //     table.append.text(`id: ${metaSubject.id}`);
-    
-    // d3.json(url).then(data => {
-    //     // console.log(data);
-
-    //     let metaDataSet = data.metadata;
-    //     let metaArray = metaDataSet.filter(m => m.id == subjectId);
-    //     let metaSubject = metaArray[0];
-    //     console.log(metaSubject);
-    // });
-    // let body = d3.select("sample-metadata").append();
-    // body.text(`id: ${metaSubject.ethnicity}`);
-
 };
 
 // Build a Bar Chart
