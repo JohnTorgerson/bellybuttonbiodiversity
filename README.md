@@ -30,6 +30,7 @@
 ### Credits and Special Thanks
 * Special thanks to our professor Dominic LaBella for an outstanding tutorial on building interactive dashboards
 * Some of his code was used in this
+* Special thanks to Conrad Carlen for comprehenson assistance with the d3 library
 * Special thanks to Scott Neubauer for some debugging tips
 * Data Source: The Public Science Lab | Department of Applied Ecology | North Carolina State University
 
